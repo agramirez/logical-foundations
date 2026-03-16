@@ -164,7 +164,12 @@ Proof.
             + simpl. rewrite <- app_assoc. simpl. reflexivity.
         - induction l2 as [|t2' l2' Hl2'].
             + simpl. rewrite -> Hl1'. simpl. reflexivity.
-            + simpl in Hl1'. simpl in Hl2'. simpl. rewrite -> Hl1'. rewrite <- app_assoc. reflexivity.
+            + simpl in Hl1'. 
+                simpl in Hl2'. 
+                simpl. 
+                rewrite -> Hl1'. 
+                rewrite <- app_assoc. 
+                reflexivity.
 Qed.
 
 Theorem rev_involutive: forall X:Type, forall l:list X,
@@ -175,3 +180,88 @@ Proof.
         - simpl. reflexivity.
         - simpl. rewrite -> rev_app_distr. rewrite -> Hl'. simpl. reflexivity.
 Qed. 
+
+(* polymorphic pairs *)
+Inductive prod (X Y:Type) : Type :=
+    | pair (x:X) (y:Y).
+
+Arguments pair {X} {Y}.
+
+Notation "( x , y )" := (pair x y).
+
+Notation "X * Y" := (prod X Y) : type_scope.
+
+Definition fst {X Y:Type} (p: X * Y) : X :=
+    match p with (x,_) => x end.
+
+Definition snd {X Y:Type} (p: X * Y) : Y :=
+    match p with (_,y) => y end.
+
+Fixpoint combine {X Y:Type} (lx:list X) (ly:list Y) : list (X*Y) :=
+    match lx,ly with
+        | [],_ => []
+        | _,[] => []
+        | x :: tx, y :: ty => (x,y) :: (combine tx ty)
+    end.
+
+
+(*Question: What is the type of combine?
+Answer: It is list of products of X and Y.
+*)
+Check @combine.
+
+(*Question: What does Compute (combine [1;2] [false;false;true;true])  print?
+Answer: It should print [(1,false);(2,false)]
+*)
+Compute (combine [1;2] [false;false;true;true]).
+
+Fixpoint split {X Y : Type} (l : list (X*Y)) : (list X) * (list Y) :=
+    match l with
+        | [] => ([],[])
+        | (x,y) :: t => (x :: (fst (split t)), y :: (snd (split t)))
+    end.
+
+Example test_split:
+  split [(1,false);(2,false)] = ([1;2],[false;false]).
+Proof. simpl. reflexivity. Qed.
+
+(* Polymorphic Options *)
+Module OptionPlayground.
+
+Inductive option (X:Type) (x:X) : Type :=
+    | Some (x:X)
+    | None.
+
+Arguments Some {X}.
+Arguments None {X}.
+
+End OptionPlayground.
+
+Fixpoint nth_error {X:Type} (l:list X) (nth:nat) : option X :=
+    match l with
+        | nil => None
+        | a :: l' => match nth with
+                        | O => Some a
+                        | S n' => nth_error l' n'
+                    end
+    end.
+    
+Example test_nth_error1: nth_error [4;5;6;7] 0 = Some 4.
+Proof. simpl. reflexivity. Qed.
+Example test_nth_error2: nth_error [[1];[2]] 1 = Some [2].
+Proof. simpl. reflexivity. Qed.
+Example test_nth_error3: nth_error [true] 2 = None.
+Proof. simpl. reflexivity. Qed.
+
+Definition hd_error {X : Type} (l : list X) : option X :=
+    match l with
+        | [] => None
+        | h :: t => Some h
+    end.
+
+Example test_hd_error1 : hd_error [1;2] = Some 1.
+Proof. simpl. reflexivity. Qed.
+Example test_hd_error2 : hd_error [[1];[2]] = Some [1].
+Proof. simpl. reflexivity. Qed.
+
+(* Functions as Data *)
