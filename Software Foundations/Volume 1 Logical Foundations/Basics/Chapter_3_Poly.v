@@ -394,3 +394,23 @@ Fixpoint map {X Y : Type} (f : X -> Y) (l : list X) : list Y :=
   | h :: t => (f h) :: (map f t)
   end.
 
+Example test_map1: map (fun x => plus 3 x) [2;0;2] = [5;3;5].
+Proof. simpl. reflexivity. Qed.
+
+Example test_map2:
+    map odd [2;1;2;5] = [false;true;false;true].
+Proof. simpl. reflexivity. Qed.
+
+ Example test_map3:
+    map (fun n => [even n;odd n]) [2;1;2;5] = 
+    [[true;false];[false;true];[true;false];[false;true]].
+Proof. simpl. reflexivity. Qed.
+
+(* Exercise: 3 stars, standard (map_rev) *)
+Theorem map_rev_comm: forall (X Y:Type) (applyF: X -> Y) (l:list X),
+    map applyF (rev l) = rev (map applyF l).
+Proof.
+    intros X Y applyF l.
+    induction l as [|typeX listX Hl].
+        - simpl. reflexivity.
+        - simpl.
