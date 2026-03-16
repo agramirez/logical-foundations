@@ -390,7 +390,7 @@ Proof. simpl. reflexivity. Qed.
 (* MAP *)
 Fixpoint map {X Y : Type} (f : X -> Y) (l : list X) : list Y :=
   match l with
-  | [] ⇒ []
-  | h :: t ⇒ (f h) :: (map f t)
+  | [] => []
+  | h :: t => (f h) :: (map f t)
   end.
 
