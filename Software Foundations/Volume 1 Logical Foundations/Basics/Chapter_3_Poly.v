@@ -166,3 +166,12 @@ Proof.
             + simpl. rewrite -> Hl1'. simpl. reflexivity.
             + simpl in Hl1'. simpl in Hl2'. simpl. rewrite -> Hl1'. rewrite <- app_assoc. reflexivity.
 Qed.
+
+Theorem rev_involutive: forall X:Type, forall l:list X,
+    rev (rev l) = l.
+Proof.
+    intros X l.
+    induction l as [|t' l' Hl'].
+        - simpl. reflexivity.
+        - simpl. rewrite -> rev_app_distr. rewrite -> Hl'. simpl. reflexivity.
+Qed. 
