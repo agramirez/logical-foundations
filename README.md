@@ -1,6 +1,26 @@
 # Logica Foundations
 My solutions for the problems from Rocq Software Foundations Volume 1
 
+# Project Structure
+## Logical/Foundations
+This is the [Software Foundations: Volume 1 - Logical Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/index.html) book lessons and exercises.
+
+Each chapter corresponds to a different subfolder:
+
+- [Basics](./Logical/Foundations/Basics/)
+    - [Concepts](./Logical/Foundations/Basics/Concepts/)
+        - [Data and Functions](./Logical/Foundations/Basics/Concepts/DataAndFunctions.v)
+    - [Exercises](./Logical/Foundations/Basics/Exercises)
+        - [Late Days](./Logical/Foundations/Basics/Exercises/LateDays.v)
+        - [NandB](./Logical/Foundations/Basics/Exercises/NandB.v)
+
+Within each chapter folder there is a **Concepts** directory, which is basically a copy of all the basic lessons, proofs, and definitions within the chapter.  This is not very interesting for demonstration purposes since it's essentially a copy/paste of the book.
+
+However, within each chapter folder there is also an Exercises folder.  That is definitely interesting because it contains all of my solutions to the exercises provided in the book.
+
+> NOTE: It is possible to test the validity of my exercises by running test scripts that can be obtained from the zip file of the [Lofical Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/lf.tgz) book.  At some point I'll merge them here and run them, but for now just getting the prover to move to the end is good enough lol
+
+
 ## Pre-requisites
 To run the Rocq code you can use VSCode with Dev Containers to launch a Dev Container with Rocq installed or you can have the Rocq IDE installed and configured on your PC and Copy/Paste the code or open it with the IDE.
 
