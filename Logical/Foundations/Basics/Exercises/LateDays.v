@@ -1,6 +1,7 @@
 (******************************************************************************
   Author:       Alex Ramirez
-  Description:  Solved problems from More Exercises section of Basics Functional Programming in Rocq (Chapter 2) of Logical Foundations
+  Description:  Solved problems from More Exercises section of Basics Functional
+                Programming in Rocq (Chapter 2) of Logical Foundations
 ******************************************************************************)
 Module First.
     

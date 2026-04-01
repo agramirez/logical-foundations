@@ -1,0 +1,27 @@
+DIGEST 48bf854015bc83f24d11225a0d23b2a1
+FLF.Alex.Assert
+R27:32 Stdlib.Strings.String <> <> lib
+ind 46:51 <> assert
+constr 69:71 <> Yes
+constr 79:80 <> No
+scheme 46:51 <> assert_rect
+scheme 46:51 <> assert_ind
+scheme 46:51 <> assert_rec
+scheme 46:51 <> assert_sind
+def 95:98 <> nega
+R103:108 LF.Alex.Assert <> assert ind
+binder 101:101 <> a:3
+R113:118 LF.Alex.Assert <> assert ind
+R130:130 LF.Alex.Assert <> a:3 var
+R145:147 LF.Alex.Assert <> Yes constr
+R137:138 LF.Alex.Assert <> No constr
+prf 159:166 <> nega_inv
+R178:183 LF.Alex.Assert <> assert ind
+binder 176:176 <> a:4
+R203:205 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R190:193 LF.Alex.Assert <> nega def
+R196:199 LF.Alex.Assert <> nega def
+R201:201 LF.Alex.Assert <> a:4 var
+R206:206 LF.Alex.Assert <> a:4 var
+def 315:316 <> ok
+R321:323 LF.Alex.Assert <> Yes constr

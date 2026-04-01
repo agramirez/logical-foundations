@@ -1,0 +1,7 @@
+-Q ./Logical/Foundations LF
+-Q ./Logical/Foundations/Alex LF.Alex
+-Q ./Logical/Foundations/01_Basics LF.Basics
+-Q ./Logical/Foundations/01_Basics/Concepts LF.Basics.Concepts
+-Q ./Logical/Foundations/01_Basics/Exercises LF.Basics.Exercises
+
+-docroot .

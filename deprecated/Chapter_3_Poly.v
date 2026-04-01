@@ -1,3 +1,8 @@
+(******************************************************************************
+  Author:       Alex Ramirez
+  Description:  Solved problems from 
+******************************************************************************)
+(* this is a polymorphic list definition *)
 Inductive list (X:Type) : Type :=
   | nil
   | cons (x:X) (l:list X).
@@ -8,11 +13,14 @@ Fixpoint repeat (X:Type) (x:X) (count:nat) : list X :=
         | S count' => cons X x (repeat X x count')
     end.
 
+(* simple tests for creating lists with different types *)
 Example test_repeat1: repeat nat 4 2 = (cons nat 4 (cons nat 4 (nil nat))).
 Proof. simpl. reflexivity. Qed.
 Example test_repeat2: repeat bool false 1 = (cons bool false (nil bool)).
 Proof. simpl. reflexivity. Qed.
 
+(* a section to practice if/when the type must be provided and/or how to construct
+    different inductive types *)
 Module MumbleGrumble.
     Inductive mumble : Type :=
         | a
@@ -35,6 +43,9 @@ Module MumbleGrumble.
     *)
 End MumbleGrumble.
 
+(* a different definition of the repeat function to show that we don't need to 
+specify the types since Rocq can infer them...but it's still a good practice 
+to provide them for clarity *)
 Fixpoint repeat' X x count : list X :=
     match count with 
         | O => nil X
@@ -44,23 +55,30 @@ Fixpoint repeat' X x count : list X :=
 Check repeat'.
 Check repeat.
 
+(* yet another version of repeat that shows even more inference via the _ placeholder *)
 Fixpoint repeat'' X x count : list X :=
     match count with
         | O => nil _
         | S count' => cons _ x (repeat'' _ x count')
     end.
 
+(* here we "define" the default arguments such that we don't need to provide them 
+directly or indirectly to the functions or constructions. *)
 Arguments nil {X}.
 Arguments cons {X}.
 Arguments repeat {X}.
 
 Definition list123''' := cons 1 (cons 2 (cons 3 nil)).
 
+(* in this case we show that using an implicit type works with Inductive constructors,
+but it is not good practice because it causes Rocq to get confused sometimes. *)
 Inductive list' {X:Type} : Type :=
     | nil'
     | cons' (x:X) (l:list').
 
-
+(* here we define the append function, but we DO use implicit types such that we don't
+have to explicitly declare the type every time we call the function.  this works well
+with non-inductive definitions like fixpoint definitions. *)
 Fixpoint app {X:Type} (l1 l2:list X) : list X :=
     match l1 with
         | nil => l2
@@ -76,6 +94,7 @@ Example test_app2:
     app (cons 1 nil) nil = cons 1 nil.
 Proof. simpl. reflexivity. Qed.
 
+(* this is the reverse function to reverse a list *)
 Fixpoint rev {X:Type} (l:list X) : list X :=
     match l with
         | nil => nil
@@ -88,6 +107,7 @@ Proof. simpl. reflexivity. Qed.
 Example test_rev2: rev (cons true nil) = cons true nil.
 Proof. simpl. reflexivity. Qed.
 
+(* here is the length function to get the lengt of a list *)
 Fixpoint length {X:Type} (l:list X) : nat :=
     match l with
         | nil => O
@@ -99,10 +119,13 @@ Proof. simpl. reflexivity. Qed.
 
 Fail Definition mynil := nil.
 
+(* here we're checking the definition of nil using the @ operator
+so that Rocq doesn't complain *)
 Check @nil.
 Check @nil nat.
 
 (* list notation *)
+(* here we define some handy notation for creating lists *)
 Notation "x :: y" := (cons x y) (at level 60, right associativity).
 Notation "[]" := nil.
 Notation "[ x ; .. ; y ]" := (cons x .. (cons y []) ..).
@@ -407,10 +430,46 @@ Proof. simpl. reflexivity. Qed.
 Proof. simpl. reflexivity. Qed.
 
 (* Exercise: 3 stars, standard (map_rev) *)
+Lemma map_reflex_empty_r: forall (X Y:Type) (f:X -> Y) (x:X),
+    map f [] = [].
+Proof. intros X Y f x. simpl. reflexivity. Qed.
+
+Lemma map_reflex_single_r: forall (X Y:Type) (f:X -> Y) (x:X),
+    map f [x] = [f x].
+Proof. simpl. reflexivity. Qed.
+Lemma map_reflex_single_l: forall (X Y:Type) (f:X -> Y) (x:X),
+    [f x] = map f [x].
+Proof. intros X Y f x. simpl. reflexivity. Qed.
+
+Lemma rev_app_distr': forall (X:Type) (l1 l2:list X),
+    rev (l1 ++ l2) = rev l2 ++ rev l1.
+Proof. 
+    intros X l1 l2.
+    rewrite -> rev_app_distr. reflexivity.
+Qed.
+
+Lemma rev_app_distr'': forall (X:Type) (x:X) (l1:list X),
+    rev (l1 ++ [x]) = rev [x] ++ rev l1.
+Proof. intros X x l1.
+    induction l1.
+    - simpl. reflexivity.
+    - simpl. rewrite -> IHl1. rewrite <- app_assoc. simpl. reflexivity.
+Qed.
+
+Lemma rev_app_distr''': forall (X:Type) (x:X) (l:list X),
+    rev l ++ [x] = rev l ++ rev [x].
+Proof. intros X x l.
+simpl. reflexivity. Qed.
+
+Theorem map_rev_comm': forall (X Y:Type) (x:X) (f:X -> Y) (l:list X),
+    map f (rev [x]) = rev (map f [x]).
+Proof. intros X Y x f l.
+simpl. reflexivity. Qed.
+
 Theorem map_rev_comm: forall (X Y:Type) (applyF: X -> Y) (l:list X),
     map applyF (rev l) = rev (map applyF l).
 Proof.
     intros X Y applyF l.
-    induction l as [|typeX listX Hl].
-        - simpl. reflexivity.
-        - simpl.
+    induction l.
+    - simpl. reflexivity.
+    - simpl. rewrite <- IHl.

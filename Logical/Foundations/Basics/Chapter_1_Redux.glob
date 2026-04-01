@@ -1,0 +1,190 @@
+DIGEST fad20cfeaaf771f110c2a4ee525d3227
+FLF.Chapter_1_Redux
+mod 7:9 <> GPS
+ind 101:106 GPS affirm
+constr 124:126 GPS Yes
+constr 134:135 GPS No
+scheme 101:106 GPS affirm_rect
+scheme 101:106 GPS affirm_ind
+scheme 101:106 GPS affirm_rec
+scheme 101:106 GPS affirm_sind
+def 150:153 GPS nega
+R158:163 LF.Chapter_1_Redux GPS affirm ind
+binder 156:156 <> a:3
+R168:173 LF.Chapter_1_Redux GPS affirm ind
+R188:188 LF.Chapter_1_Redux <> a:3 var
+R195:197 LF.Chapter_1_Redux GPS Yes constr
+R202:203 LF.Chapter_1_Redux GPS No constr
+R207:208 LF.Chapter_1_Redux GPS No constr
+R213:215 LF.Chapter_1_Redux GPS Yes constr
+def 234:237 GPS anda
+R244:249 LF.Chapter_1_Redux GPS affirm ind
+binder 240:240 <> a:5
+binder 242:242 <> b:6
+R254:259 LF.Chapter_1_Redux GPS affirm ind
+R274:274 LF.Chapter_1_Redux <> a:5 var
+R281:283 LF.Chapter_1_Redux GPS Yes constr
+R288:288 LF.Chapter_1_Redux <> b:6 var
+R292:293 LF.Chapter_1_Redux GPS No constr
+R298:299 LF.Chapter_1_Redux GPS No constr
+def 322:324 GPS ora
+R331:336 LF.Chapter_1_Redux GPS affirm ind
+binder 327:327 <> a:8
+binder 329:329 <> b:9
+R341:346 LF.Chapter_1_Redux GPS affirm ind
+R361:361 LF.Chapter_1_Redux <> a:8 var
+R368:370 LF.Chapter_1_Redux GPS Yes constr
+R375:377 LF.Chapter_1_Redux GPS Yes constr
+R381:382 LF.Chapter_1_Redux GPS No constr
+R387:387 LF.Chapter_1_Redux <> b:9 var
+def 473:481 GPS test_ora1
+R494:496 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R484:486 LF.Chapter_1_Redux GPS ora def
+R488:490 LF.Chapter_1_Redux GPS Yes constr
+R492:493 LF.Chapter_1_Redux GPS No constr
+R497:499 LF.Chapter_1_Redux GPS Yes constr
+def 542:550 GPS test_ora2
+R562:564 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R553:555 LF.Chapter_1_Redux GPS ora def
+R557:558 LF.Chapter_1_Redux GPS No constr
+R560:561 LF.Chapter_1_Redux GPS No constr
+R565:566 LF.Chapter_1_Redux GPS No constr
+def 609:617 GPS test_ora3
+R630:632 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R620:622 LF.Chapter_1_Redux GPS ora def
+R624:625 LF.Chapter_1_Redux GPS No constr
+R627:629 LF.Chapter_1_Redux GPS Yes constr
+R633:635 LF.Chapter_1_Redux GPS Yes constr
+def 678:686 GPS test_ora4
+R700:702 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R689:691 LF.Chapter_1_Redux GPS ora def
+R693:695 LF.Chapter_1_Redux GPS Yes constr
+R697:699 LF.Chapter_1_Redux GPS Yes constr
+R703:705 LF.Chapter_1_Redux GPS Yes constr
+R814:816 LF.Chapter_1_Redux GPS ora def
+not 801:801 GPS :::x_'||'_x
+R846:849 LF.Chapter_1_Redux GPS anda def
+not 833:833 GPS :::x_'&&'_x
+def 904:912 GPS test_ora5
+R930:932 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R923:926 LF.Chapter_1_Redux GPS :::x_'||'_x not
+R917:920 LF.Chapter_1_Redux GPS :::x_'||'_x not
+R915:916 LF.Chapter_1_Redux GPS No constr
+R921:922 LF.Chapter_1_Redux GPS No constr
+R927:929 LF.Chapter_1_Redux GPS Yes constr
+R933:935 LF.Chapter_1_Redux GPS Yes constr
+def 1022:1026 GPS nega'
+R1031:1036 LF.Chapter_1_Redux GPS affirm ind
+binder 1029:1029 <> a:11
+R1041:1046 LF.Chapter_1_Redux GPS affirm ind
+R1054:1054 LF.Chapter_1_Redux <> a:11 var
+R1069:1071 LF.Chapter_1_Redux GPS Yes constr
+R1061:1062 LF.Chapter_1_Redux GPS No constr
+def 1085:1089 GPS anda'
+R1096:1101 LF.Chapter_1_Redux GPS affirm ind
+binder 1092:1092 <> a:12
+binder 1094:1094 <> b:13
+R1106:1111 LF.Chapter_1_Redux GPS affirm ind
+R1119:1119 LF.Chapter_1_Redux <> a:12 var
+R1133:1134 LF.Chapter_1_Redux GPS No constr
+R1126:1126 LF.Chapter_1_Redux <> b:13 var
+def 1148:1151 GPS ora'
+R1158:1163 LF.Chapter_1_Redux GPS affirm ind
+binder 1154:1154 <> a:14
+binder 1156:1156 <> b:15
+R1168:1173 LF.Chapter_1_Redux GPS affirm ind
+R1181:1181 LF.Chapter_1_Redux <> b:15 var
+R1197:1197 LF.Chapter_1_Redux <> b:15 var
+R1188:1190 LF.Chapter_1_Redux GPS Yes constr
+def 1237:1241 GPS nanda
+R1248:1253 LF.Chapter_1_Redux GPS affirm ind
+binder 1244:1244 <> a:16
+binder 1246:1246 <> b:17
+R1258:1263 LF.Chapter_1_Redux GPS affirm ind
+R1280:1280 LF.Chapter_1_Redux <> b:17 var
+R1278:1278 LF.Chapter_1_Redux <> a:16 var
+R1297:1299 LF.Chapter_1_Redux GPS Yes constr
+R1301:1303 LF.Chapter_1_Redux GPS Yes constr
+R1308:1309 LF.Chapter_1_Redux GPS No constr
+R1328:1330 LF.Chapter_1_Redux GPS Yes constr
+def 1350:1360 GPS test_nanda1
+R1363:1363 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1376:1379 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1364:1368 LF.Chapter_1_Redux GPS nanda def
+R1370:1372 LF.Chapter_1_Redux GPS Yes constr
+R1374:1375 LF.Chapter_1_Redux GPS No constr
+R1380:1382 LF.Chapter_1_Redux GPS Yes constr
+def 1425:1435 GPS test_nanda2
+R1438:1438 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1451:1454 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1439:1443 LF.Chapter_1_Redux GPS nanda def
+R1445:1446 LF.Chapter_1_Redux GPS No constr
+R1448:1450 LF.Chapter_1_Redux GPS Yes constr
+R1455:1457 LF.Chapter_1_Redux GPS Yes constr
+def 1500:1510 GPS test_nanda3
+R1513:1513 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1525:1528 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1514:1518 LF.Chapter_1_Redux GPS nanda def
+R1520:1521 LF.Chapter_1_Redux GPS No constr
+R1523:1524 LF.Chapter_1_Redux GPS No constr
+R1529:1531 LF.Chapter_1_Redux GPS Yes constr
+def 1574:1584 GPS test_nanda4
+R1587:1587 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1601:1604 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1588:1592 LF.Chapter_1_Redux GPS nanda def
+R1594:1596 LF.Chapter_1_Redux GPS Yes constr
+R1598:1600 LF.Chapter_1_Redux GPS Yes constr
+R1605:1606 LF.Chapter_1_Redux GPS No constr
+def 1677:1681 GPS anda3
+R1690:1695 LF.Chapter_1_Redux GPS affirm ind
+binder 1684:1684 <> a:20
+binder 1686:1686 <> b:21
+binder 1688:1688 <> c:22
+R1700:1705 LF.Chapter_1_Redux GPS affirm ind
+R1724:1724 LF.Chapter_1_Redux <> c:22 var
+R1722:1722 LF.Chapter_1_Redux <> b:21 var
+R1720:1720 LF.Chapter_1_Redux <> a:20 var
+R1741:1743 LF.Chapter_1_Redux GPS Yes constr
+R1745:1747 LF.Chapter_1_Redux GPS Yes constr
+R1749:1751 LF.Chapter_1_Redux GPS Yes constr
+R1756:1758 LF.Chapter_1_Redux GPS Yes constr
+R1779:1780 LF.Chapter_1_Redux GPS No constr
+def 1800:1810 GPS test_anda31
+R1813:1813 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1831:1834 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1814:1818 LF.Chapter_1_Redux GPS anda3 def
+R1820:1822 LF.Chapter_1_Redux GPS Yes constr
+R1824:1826 LF.Chapter_1_Redux GPS Yes constr
+R1828:1830 LF.Chapter_1_Redux GPS Yes constr
+R1835:1837 LF.Chapter_1_Redux GPS Yes constr
+def 1880:1890 GPS test_anda32
+R1893:1893 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1910:1913 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1894:1898 LF.Chapter_1_Redux GPS anda3 def
+R1900:1901 LF.Chapter_1_Redux GPS No constr
+R1903:1905 LF.Chapter_1_Redux GPS Yes constr
+R1907:1909 LF.Chapter_1_Redux GPS Yes constr
+R1914:1915 LF.Chapter_1_Redux GPS No constr
+def 1958:1968 GPS test_anda33
+R1971:1971 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1988:1991 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1972:1976 LF.Chapter_1_Redux GPS anda3 def
+R1978:1980 LF.Chapter_1_Redux GPS Yes constr
+R1982:1983 LF.Chapter_1_Redux GPS No constr
+R1985:1987 LF.Chapter_1_Redux GPS Yes constr
+R1992:1993 LF.Chapter_1_Redux GPS No constr
+def 2036:2046 GPS test_anda34
+R2049:2049 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2066:2069 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2050:2054 LF.Chapter_1_Redux GPS anda3 def
+R2056:2058 LF.Chapter_1_Redux GPS Yes constr
+R2060:2062 LF.Chapter_1_Redux GPS Yes constr
+R2064:2065 LF.Chapter_1_Redux GPS No constr
+R2070:2071 LF.Chapter_1_Redux GPS No constr
+R2141:2143 LF.Chapter_1_Redux GPS Yes constr
+R2153:2156 LF.Chapter_1_Redux GPS nega def
+R2158:2160 LF.Chapter_1_Redux GPS Yes constr
+R2170:2173 LF.Chapter_1_Redux GPS nega def
+R2181:2183 LF.Chapter_1_Redux GPS <> mod
+mod 2194:2196 <> Tax
+R2204:2206 LF.Chapter_1_Redux Tax <> mod
