@@ -5,14 +5,16 @@ My solutions for the problems from Rocq Software Foundations Volume 1
 ## Logical/Foundations
 This is the [Software Foundations: Volume 1 - Logical Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/index.html) book lessons and exercises.
 
+> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the following command: `openssl enc -d -pbkdf2 -base64 -aes-256-cbc -k 'password' -in ./path/to/Encrypted.v.enc -out ./path/to/Encrypted.v` where `password` will be provided if you email me at the primary address from my resume.
+
 Each chapter corresponds to a different subfolder:
 
 - [Basics](./Logical/Foundations/Basics/)
     - [Concepts](./Logical/Foundations/Basics/Concepts/)
         - [Data and Functions](./Logical/Foundations/Basics/Concepts/DataAndFunctions.v)
     - [Exercises](./Logical/Foundations/Basics/Exercises)
-        - [Late Days](./Logical/Foundations/Basics/Exercises/LateDays.v)
-        - [NandB](./Logical/Foundations/Basics/Exercises/NandB.v)
+        - [Late Days](./Logical/Foundations/Basics/Exercises/LateDays.v.enc) (encrypted)
+        - [NandB](./Logical/Foundations/Basics/Exercises/NandB.v.enc) (encrypted)
 
 Within each chapter folder there is a **Concepts** directory, which is basically a copy of all the basic lessons, proofs, and definitions within the chapter.  This is not very interesting for demonstration purposes since it's essentially a copy/paste of the book.
 
