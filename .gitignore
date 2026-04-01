@@ -1,3 +1,5 @@
+.env
+
 *.annot
 *.cmo
 *.cma
