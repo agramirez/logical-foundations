@@ -18,7 +18,7 @@ Within each chapter folder there is a **Concepts** directory, which is basically
 
 However, within each chapter folder there is also an Exercises folder.  That is definitely interesting because it contains all of my solutions to the exercises provided in the book.
 
-> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the [decrypt_exercises.sh script](./decrypt_exercises.sh).  The script requires a .env file as described in [.env.example](./env.example).  The actual password to decrypt the files will be provided upon request.
+> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the [decrypt_exercises.sh](./decrypt_exercises.sh) script.  The script requires a .env file as described in [.env.example](./env.example).  The actual password to decrypt the files will be provided upon request.
 
 ## Pre-requisites
 To run the Rocq code you can use VSCode with Dev Containers to launch a Dev Container with Rocq installed or you can have the Rocq IDE installed and configured on your PC and Copy/Paste the code or open it with the IDE.
