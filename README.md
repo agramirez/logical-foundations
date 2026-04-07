@@ -1,11 +1,9 @@
-# Logica Foundations
-My solutions for the problems from Rocq Software Foundations Volume 1
+# Software Foundations
+My solutions for the problems from Rocq's [Software Foundations books.](https://softwarefoundations.cis.upenn.edu/)
 
 # Project Structure
 ## Logical/Foundations
 This is the [Software Foundations: Volume 1 - Logical Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/index.html) book lessons and exercises.
-
-> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the [decrypt_exercises.sh script](./decrypt_exercises.sh).  The script requires a .env file as described in [.env.example](./env.example).  The actual password to decrypt the files will be provided upon request.
 
 Each chapter corresponds to a different subfolder:
 
@@ -20,8 +18,7 @@ Within each chapter folder there is a **Concepts** directory, which is basically
 
 However, within each chapter folder there is also an Exercises folder.  That is definitely interesting because it contains all of my solutions to the exercises provided in the book.
 
-> NOTE: It is possible to test the validity of my exercises by running test scripts that can be obtained from the zip file of the [Lofical Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/lf.tgz) book.  At some point I'll merge them here and run them, but for now just getting the prover to move to the end is good enough lol
-
+> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the [decrypt_exercises.sh script](./decrypt_exercises.sh).  The script requires a .env file as described in [.env.example](./env.example).  The actual password to decrypt the files will be provided upon request.
 
 ## Pre-requisites
 To run the Rocq code you can use VSCode with Dev Containers to launch a Dev Container with Rocq installed or you can have the Rocq IDE installed and configured on your PC and Copy/Paste the code or open it with the IDE.
