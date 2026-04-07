@@ -2,8 +2,6 @@
 
     Software Foundations / Logical Foundations / Basics / Data and Functions
 *)
-From Stdlib Require Export String.
-
 (* Days of the Week *)
 Section DaysOfTheWeek.
     Inductive day : Type :=
@@ -132,3 +130,203 @@ Module Numbers.
     Example test_odd2: odd 4 = false.
     Proof. simpl. reflexivity. Qed.
 End Numbers.
+
+(** *Types
+
+    https://softwarefoundations.cis.upenn.edu/lf-current/Basics.html#lab30
+*)
+Check true.
+(* ===> true : bool *)
+
+Check true
+  : bool.
+Check (negb true)
+  : bool.
+
+Check negb
+    : bool -> bool.
+
+(** *New Types from Old
+
+    https://softwarefoundations.cis.upenn.edu/lf-current/Basics.html#lab31
+*)
+Inductive rgb : Type :=
+    | red
+    | green
+    | blue.
+Inductive color : Type :=
+    | black
+    | white
+    | primary (p : rgb).
+
+Definition monochrome (c : color) : bool :=
+    match c with
+        | black => true
+        | white => true
+        | primary p => false
+    end.
+
+Definition isred (c : color) : bool :=
+    match c with
+        | black => false
+        | white => false
+        | primary red => true
+        | primary _ => false
+    end.
+
+Module Playground.
+    Definition foo : rgb := blue.
+End Playground.
+
+Definition foo : bool := true.
+Check Playground.foo : rgb.
+Check foo : bool.
+
+Module TuplePlayground.
+    Inductive bit : Type :=
+        | B1
+        | B0.
+    Inductive nybble : Type :=
+        | bits (b0 b1 b2 b3 : bit).
+    Check (bits B1 B0 B1 B0)
+        : nybble.
+
+    Definition all_zero (nb : nybble) : bool :=
+        match nb with
+        | (bits B0 B0 B0 B0) => true
+        | (bits _ _ _ _) => false
+        end.
+
+    Compute (all_zero (bits B1 B0 B1 B0)).
+    (* ===> false : bool *)
+    Compute (all_zero (bits B0 B0 B0 B0)).
+    (* ===> true : bool *)
+End TuplePlayground.
+
+Module NatPlayground1.
+    (* had to get rid of this definition because it was causing troubles.
+        the definition of minustwo was somehow reaching in here and using
+        this definition instead of the standard nat definition.... *)
+    (* Inductive nat : Type :=
+        | O
+        | S (n : nat). *)
+
+    Inductive otherNat : Type :=
+        | stop
+        | tick (foo : otherNat).
+
+    Definition pred (n : nat) : nat :=
+        match n with
+        | O => O
+        | S n' => n'
+        end.
+End NatPlayground1.
+
+Check (S (S (S (S O)))).
+
+Definition minustwo (n : nat) : nat :=
+    match n with
+        | O => O
+        | S O => O
+        | S (S n') => n'
+    end.
+
+Compute (minustwo 4).
+(* ===> 2 : nat *)
+
+Check S : nat -> nat.
+Check pred : nat -> nat.
+Check minustwo : nat -> nat.
+
+Fixpoint even (n:nat) : bool :=
+    match n with
+        | O => true
+        | S O => false
+        | S (S n') => even n'
+    end.
+
+Definition odd (n:nat) : bool :=
+    negb (even n).
+
+Example test_odd1: odd 1 = true.
+Proof. simpl. reflexivity. Qed.
+Example test_odd2: odd 4 = false.
+Proof. simpl. reflexivity. Qed.
+
+Module NatPlayground2.
+
+Fixpoint plus (n : nat) (m : nat) : nat :=
+    match n with
+    | O => m
+    | S n' => S (plus n' m)
+    end.
+
+Compute (plus 3 2).
+(* ===> 5 : nat *)
+
+Fixpoint mult (n m : nat) : nat :=
+    match n with
+        | O => O
+        | S n' => plus m (mult n' m)
+    end.
+    
+Example test_mult1: (mult 3 3) = 9.
+Proof. simpl. reflexivity. Qed.
+
+Fixpoint minus (n m:nat) : nat :=
+    match n, m with
+        | O , _ => O
+        | S _ , O => n
+        | S n', S m' => minus n' m'
+    end.
+End NatPlayground2.
+
+Fixpoint exp (base power : nat) : nat :=
+    match power with
+        | O => S O
+        | S p => mult base (exp base p)
+    end.
+
+Notation "x + y" := (plus x y)
+                    (at level 50, left associativity)
+                    : nat_scope.
+Notation "x - y" := (minus x y)
+                    (at level 50, left associativity)
+                    : nat_scope.
+Notation "x * y" := (mult x y)
+                    (at level 40, left associativity)
+                    : nat_scope.
+Check ((0 + 1) + 1) : nat.
+
+Fixpoint eqb (n m : nat) : bool :=
+    match n with
+        | O => match m with
+                    | O => true
+                    | S m' => false
+                end
+        | S n' => match m with
+                    | O => false
+                    | S m' => eqb n' m'
+                end
+    end.
+
+Fixpoint leb (n m : nat) : bool :=
+    match n with
+    | O => true
+    | S n' =>
+        match m with
+            | O => false
+            | S m' => leb n' m'
+        end
+    end.
+Example test_leb1: leb 2 2 = true.
+Proof. simpl. reflexivity. Qed.
+Example test_leb2: leb 2 4 = true.
+Proof. simpl. reflexivity. Qed.
+Example test_leb3: leb 4 2 = false.
+Proof. simpl. reflexivity. Qed.
+
+Notation "x =? y" := (eqb x y) (at level 70) : nat_scope.
+Notation "x <=? y" := (leb x y) (at level 70) : nat_scope.
+Example test_leb3': (4 <=? 2) = false.
+Proof. simpl. reflexivity. Qed.
