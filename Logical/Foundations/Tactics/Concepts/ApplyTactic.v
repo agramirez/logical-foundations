@@ -52,3 +52,17 @@ Proof.
   apply eq2. apply eq1. 
 Qed.
 
+ (* apply will not work if the conclusion of the fact being applied does not match
+    the goal exactly; as in this example; *)
+Theorem silly3 : forall (n m : nat),
+  n = m ->
+  m = n.
+Proof.
+  intros n m H.
+  (* this will fail because the goal contains m = n while the implication 
+  contains n = m*)
+  Fail apply H.
+  (* we must first apply the symettry tactic*)
+  symmetry. apply H.
+Qed.
+
