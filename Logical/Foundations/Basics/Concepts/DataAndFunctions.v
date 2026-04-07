@@ -91,3 +91,44 @@ Section Booleans.
     Compute (invert bw_white).
     (* ==> bw_black : bw *)
 End Booleans.
+
+Module Types.
+    Check true.
+    (* ===> true : bool *)
+
+    Check true
+    : bool.
+    Check (negb true)
+    : bool.
+
+    Check negb
+    : bool -> bool.
+End Types.
+
+Module NewTypesFromOld.
+    Inductive rgb : Type :=
+        | red
+        | green
+        | blue.
+    Inductive color : Type :=
+        | black
+        | white
+        | primary (p : rgb).
+End NewTypesFromOld.
+
+Module Numbers.
+    Fixpoint even (n:nat) : bool :=
+        match n with
+            | O => true
+            | S O => false
+            | S (S n') => even n'
+        end.
+
+    Definition odd (n:nat) : bool :=
+        negb (even n).
+        
+    Example test_odd1: odd 1 = true.
+    Proof. simpl. reflexivity. Qed.
+    Example test_odd2: odd 4 = false.
+    Proof. simpl. reflexivity. Qed.
+End Numbers.
