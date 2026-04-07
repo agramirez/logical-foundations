@@ -41,4 +41,14 @@ Proof.
   - rewrite H1. reflexivity.
 Qed.
 
+(* Apply will try to find appropriate values for variables.  In the following
+   theorem apply eq2 will match q to n and r to m *)
+Theorem silly2a : forall (n m : nat),
+  (n,n) = (m,m) ->
+  (forall (q r : nat), (q,q) = (r,r) -> [q] = [r]) ->
+  [n] = [m].
+Proof.
+  intros n m eq1 eq2.
+  apply eq2. apply eq1. 
+Qed.
 
