@@ -1,7 +1,17 @@
--Q ./Logical/Foundations LF
--Q ./Logical/Foundations/Alex LF.Alex
--Q ./Logical/Foundations/01_Basics LF.Basics
--Q ./Logical/Foundations/01_Basics/Concepts LF.Basics.Concepts
--Q ./Logical/Foundations/01_Basics/Exercises LF.Basics.Exercises
+-R ./Logical/Foundations LF
+./Logical/Foundations
+# -Q ./Logical/Foundations/Alex LF.Alex
+
+# -Q ./Logical/Foundations/Basics LF.Basics
+# -Q ./Logical/Foundations/Basics/Concepts LF.Basics.Concepts
+# -Q ./Logical/Foundations/Basics/Exercises LF.Basics.Exercises
+
+# -Q ./Logical/Foundations/Poly LF.Poly
+# -Q ./Logical/Foundations/Poly/Concepts LF.Poly.Concepts
+# -Q ./Logical/Foundations/Poly/Exercises LF.Poly.Exercises
+
+# -Q ./Logical/Foundations/Tatics LF.Tactics
+# -Q ./Logical/Foundations/Tatics/Concepts LF.Tatics.Concepts
+# -Q ./Logical/Foundations/Tatics/Exercises LF.Tatics.Exercises
 
 -docroot .
