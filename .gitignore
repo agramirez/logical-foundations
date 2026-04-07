@@ -1,5 +1,8 @@
 .env
 
+# ignoring all .v files inside of Exercises folders
+**/Exercises/**.v
+
 *.annot
 *.cmo
 *.cma
