@@ -5,7 +5,7 @@ My solutions for the problems from Rocq Software Foundations Volume 1
 ## Logical/Foundations
 This is the [Software Foundations: Volume 1 - Logical Foundations](https://softwarefoundations.cis.upenn.edu/lf-current/index.html) book lessons and exercises.
 
-> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the following command: `openssl enc -d -pbkdf2 -base64 -aes-256-cbc -k 'password' -in ./path/to/Encrypted.v.enc -out ./path/to/Encrypted.v` where `password` will be provided if you email me at the primary address from my resume.
+> NOTE: To prevent cheating, and as requested by the [Preface of Verified Functional Algorithms](https://softwarefoundations.cis.upenn.edu/vfa-current/Preface.html), I've encrypted my solutions to excersizes.  They can be decrypted using the [decrypt_exercises.sh script](./decrypt_exercises.sh).  The script requires a .env file as described in [.env.example](./env.example).  The actual password to decrypt the files will be provided upon request.
 
 Each chapter corresponds to a different subfolder:
 
