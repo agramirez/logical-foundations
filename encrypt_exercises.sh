@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-echo "starting encruption and hash check"
+echo "starting encryption and hash check"
 for e in $(find -type f -path '*Exercises*' -iname '*.v')
 do
     ed="$e.enc"
