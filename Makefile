@@ -8,3 +8,6 @@ Makefile.coq: _CoqProject
 clean:
 	if [ -f Makefile.coq ]; then $(MAKE) -f Makefile.coq clean; fi
 	rm -f Makefile.coq
+	find -type f -name '*.vo' -delete
+	find -type f -name '*.enc' -delete
+	find -type f -name '*.sha256' -delete
