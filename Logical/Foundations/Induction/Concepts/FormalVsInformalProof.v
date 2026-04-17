@@ -1,6 +1,6 @@
 (** * Formal vs. Informal Proof
 
-    https://softwarefoundations.cis.upenn.edu/lf-current/Induction.html#lab69
+    https://softwarefoundations.cis.upenn.edu/lf-current/Induction.html#lab70
 *)
 Require Export LF.Induction.Concepts.ProofsWithinProofs.
 

@@ -2,7 +2,7 @@
 
     https://softwarefoundations.cis.upenn.edu/lf-current/Induction.html
 *)
-From LF Require Export ProofByCaseAnalysis.
+Require Export LF.Basics.Everything.
 
 Theorem add_0_r_firsttry : forall n:nat,
     n + 0 = n.
