@@ -62,3 +62,9 @@ Example test_hd2: hd 0 [] = 0.
 Proof. reflexivity. Qed.
 Example test_tl: tl [1;2;3] = [2;3].
 Proof. reflexivity. Qed.
+
+(* Bags via Lists 
+
+https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html#lab93
+*)
+Definition bag := natlist.
