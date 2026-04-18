@@ -14,10 +14,10 @@ do
     ed="$e.enc"
     es=$(echo "$e" | sed 's/.v/.sha256/')
 
-    echo "checking sha256 stored in $es"
+    #echo "checking sha256 stored in $es"
     sha256sum "$e" > "$es"
 
-    echo "encrypting $e to $ed"
+    #echo "encrypting $e to $ed"
     openssl enc -aes-256-cbc -pbkdf2 -base64 -nosalt -k "$ENC_PASSWORD" -in "$e" -out "$ed"
 done
 
