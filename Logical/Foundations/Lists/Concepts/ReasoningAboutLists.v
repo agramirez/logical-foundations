@@ -1,6 +1,6 @@
-(** *Introduction
+(** * Reasoning About Lists
 
-    https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html#lab97
+https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html#lab97
 *)
 Require Export LF.Lists.Concepts.ListsOfNumbers.
 
